@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Projects · Zhi Hin Foong" />
+    <title>Projects · Zhi Hin Foong</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a class="brand" href="home.html" aria-label="Homepage">Zhi Hin Foong</a>
+        <nav class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html" aria-current="page">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content" tabindex="-1">
+      <section class="section alt" aria-label="Projects">
+        <div class="container">
+          <h1>Projects</h1>
+          <div class="showcases">
+            <article class="showcase">
+              <div class="showcase-media" aria-hidden="true"></div>
+              <div class="showcase-body">
+                <h3>Project One</h3>
+                <p class="meta">React • TypeScript • API</p>
+                <p>A brief description of what this project does and why it’s cool.</p>
+                <div class="actions">
+                  <a class="btn" href="#">Live</a>
+                  <a class="btn" href="#">Code</a>
+                </div>
+              </div>
+            </article>
+            <article class="showcase">
+              <div class="showcase-media" aria-hidden="true"></div>
+              <div class="showcase-body">
+                <h3>Project Two</h3>
+                <p class="meta">Next.js • Tailwind • SEO</p>
+                <p>Another project highlight with a concise, action-oriented summary.</p>
+                <div class="actions">
+                  <a class="btn" href="#">Live</a>
+                  <a class="btn" href="#">Code</a>
+                </div>
+              </div>
+            </article>
+            <article class="showcase">
+              <div class="showcase-media" aria-hidden="true"></div>
+              <div class="showcase-body">
+                <h3>Project Three</h3>
+                <p class="meta">Node.js • Express • PostgreSQL</p>
+                <p>Describe the problem solved, tech used, and your contribution.</p>
+                <div class="actions">
+                  <a class="btn" href="#">Live</a>
+                  <a class="btn" href="#">Code</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Zhi Hin Foong</p>
+        <a href="#" class="to-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+  </html>
+
+

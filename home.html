@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio of Zhi Hin Foong – developer and designer." />
+    <title>Zhi Hin Foong · Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a class="brand" href="home.html" aria-label="Homepage">Zhi Hin Foong</a>
+        <nav class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content" tabindex="-1">
+      <!-- Page Hero / Banner -->
+      <section class="page-hero" aria-label="Intro banner">
+        <div class="container">
+          <span class="kicker">Front‑End Developer</span>
+          <h1>Crafting delightful, accessible interfaces for the web</h1>
+          <p class="lead">I build fast, inclusive websites and apps with modern tooling and thoughtful design. Explore selected work and what I’m currently experimenting with.</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="projects.html">View Projects</a>
+            <a class="btn" href="contact.html">Get in Touch</a>
+          </div>
+          <div class="hero-banner" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section" aria-label="About me">
+        <div class="container narrow">
+          <h2>About</h2>
+          <p>
+            I’m a developer focused on building performant, inclusive interfaces. I enjoy
+            working with modern frameworks, thoughtful design systems, and small details
+            that elevate the user experience.
+          </p>
+        </div>
+      </section>
+
+      <!-- Featured preview -->
+      <section class="section alt" aria-label="Featured projects">
+        <div class="container">
+          <h2>Featured Projects</h2>
+          <div class="grid projects-grid">
+            <article class="card project">
+              <div class="card-body">
+                <h3>Project One</h3>
+                <p>A brief description of what this project does and why it’s cool.</p>
+              </div>
+              <div class="card-footer">
+                <a class="link" href="#">Live</a>
+                <a class="link" href="#">Code</a>
+              </div>
+            </article>
+            <article class="card project">
+              <div class="card-body">
+                <h3>Project Two</h3>
+                <p>Another project highlight with a concise, action-oriented summary.</p>
+              </div>
+              <div class="card-footer">
+                <a class="link" href="#">Live</a>
+                <a class="link" href="#">Code</a>
+              </div>
+            </article>
+            <article class="card project">
+              <div class="card-body">
+                <h3>Project Three</h3>
+                <p>Describe the problem solved, tech used, and your contribution.</p>
+              </div>
+              <div class="card-footer">
+                <a class="link" href="#">Live</a>
+                <a class="link" href="#">Code</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="section" aria-label="Skills">
+        <div class="container">
+          <h2>Skills</h2>
+          <ul class="tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>Accessibility</li>
+            <li>UI Design</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section alt" aria-label="Contact">
+        <div class="container narrow">
+          <h2>Contact</h2>
+          <form class="contact-form" action="#" method="post" aria-label="Contact form">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <div class="form-actions">
+              <button class="btn primary" type="submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Zhi Hin Foong</p>
+        <a href="#" class="to-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+  </html>
+
+
