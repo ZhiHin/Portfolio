@@ -1,150 +1,183 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Portfolio of Zhi Hin Foong – developer and designer." />
-    <title>Zhi Hin Foong · Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <a class="skip-link" href="#content">Skip to content</a>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Zhi Hin Foong Portfolio</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>
+		<nav class="navbar">
+			<div class="logo">Zhi Hin Foong</div>
+			<ul class="nav-links">
+				<li><a href="#home" class="active">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
 
-    <header class="site-header" role="banner">
-      <div class="container header-inner">
-        <a class="brand" href="home.html" aria-label="Homepage">Zhi Hin Foong</a>
-        <nav class="site-nav" aria-label="Primary">
-          <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+	<main>
+		<section id="home" class="hero-section">
+			<div class="hero-container">
+				<div class="hero-flex">
+					<div class="hero-content">
+						<h2>Hello, I'm</h2>
+						<h1 class="hero-title">Zhi Hin Foong</h1>
+						<h3 class="hero-subtitle">Software Engineer</h3>
+						<p class="hero-desc">Crafting elegant solutions through code. Passionate about creating innovative web applications with modern technologies and exceptional user experiences.</p>
+						<div class="hero-buttons">
+							<a href="#contact" class="btn primary">Get In Touch</a>
+							<a href="https://github.com/" target="_blank" class="btn">GitHub</a>
+							<a href="https://linkedin.com/" target="_blank" class="btn">LinkedIn</a>
+						</div>
+					</div>
+					<div class="hero-image">
+						<div class="hero-img-frame">
+							<img src="Image/FoongZhiHin_Photo.jpg" alt="Zhi Hin Foong" />
+						</div>
+					</div>
+				</div>
+                <div class="scroll-down">&#8595;</div>
+			</div>
+		</section>
 
-    <main id="content" tabindex="-1">
-      <!-- Page Hero / Banner -->
-      <section class="page-hero" aria-label="Intro banner">
-        <div class="container">
-          <span class="kicker">Front‑End Developer</span>
-          <h1>Crafting delightful, accessible interfaces for the web</h1>
-          <p class="lead">I build fast, inclusive websites and apps with modern tooling and thoughtful design. Explore selected work and what I’m currently experimenting with.</p>
-          <div class="hero-cta">
-            <a class="btn primary" href="projects.html">View Projects</a>
-            <a class="btn" href="contact.html">Get in Touch</a>
-          </div>
-          <div class="hero-banner" aria-hidden="true"></div>
-        </div>
-      </section>
+		<section id="about" class="about-section">
+			<h2 class="section-title">About Me</h2>
+			<div class="about-content">
+				<div class="about-left">
+					<h3>Passionate Developer & Problem Solver</h3>
+					<p>With over 5 years of experience in software development, I specialize in building scalable web applications and creating seamless user experiences. My journey began with a fascination for how technology can solve real-world problems.</p>
+					<p>I thrive on learning new technologies and pushing the boundaries of what's possible with code. Whether it's architecting complex systems or crafting pixel-perfect interfaces, I bring dedication and creativity to every project.</p>
+					<p>When I'm not coding, you'll find me contributing to open-source projects, exploring the latest tech trends, or mentoring aspiring developers in the community.</p>
+				</div>
+				<div class="about-right">
+					<h3>Technical Skills</h3>
+					<div class="skills-list">
+						<span>React</span><span>TypeScript</span><span>Node.js</span><span>Python</span><span>PostgreSQL</span><span>AWS</span><span>Docker</span><span>GraphQL</span><span>Next.js</span><span>Tailwind CSS</span><span>Git</span><span>Redux</span>
+					</div>
+				</div>
+			</div>
+		</section>
 
-      <!-- About -->
-      <section id="about" class="section" aria-label="About me">
-        <div class="container narrow">
-          <h2>About</h2>
-          <p>
-            I’m a developer focused on building performant, inclusive interfaces. I enjoy
-            working with modern frameworks, thoughtful design systems, and small details
-            that elevate the user experience.
-          </p>
-        </div>
-      </section>
+		<section id="projects" class="projects-section">
+			<h2 class="section-title">Featured Projects</h2>
+			<p class="section-desc">Showcasing my latest work and the technologies I'm passionate about</p>
+			<div class="projects-list">
+				<div class="project-card">
+					<h3>E-Commerce Platform <span class="badge">Featured</span></h3>
+					<p>Full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard.</p>
+					<div class="project-tags">
+						<span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Stripe</span>
+					</div>
+					<div class="project-links">
+						<a href="#" class="btn">Code</a>
+						<a href="#" class="btn primary">Live Demo</a>
+					</div>
+				</div>
+				<div class="project-card">
+					<h3>Task Management App <span class="badge">Featured</span></h3>
+					<p>Collaborative project management tool with real-time updates, file sharing, and team communication features.</p>
+					<div class="project-tags">
+						<span>Next.js</span><span>TypeScript</span><span>Prisma</span><span>Socket.io</span>
+					</div>
+					<div class="project-links">
+						<a href="#" class="btn">Code</a>
+						<a href="#" class="btn primary">Live Demo</a>
+					</div>
+				</div>
+				<div class="project-card">
+					<h3>AI Chat Interface</h3>
+					<p>Modern chat application with AI integration, message encryption, and customizable themes.</p>
+					<div class="project-tags">
+						<span>React</span><span>Python</span><span>OpenAI API</span><span>WebSocket</span>
+					</div>
+					<div class="project-links">
+						<a href="#" class="btn">Code</a>
+						<a href="#" class="btn primary">Live Demo</a>
+					</div>
+				</div>
+				<div class="project-card">
+					<h3>Weather Dashboard</h3>
+					<p>Interactive weather application with location-based forecasts, data visualization, and severe weather alerts.</p>
+					<div class="project-tags">
+						<span>Vue.js</span><span>Chart.js</span><span>Weather API</span><span>PWA</span>
+					</div>
+					<div class="project-links">
+						<a href="#" class="btn">Code</a>
+						<a href="#" class="btn primary">Live Demo</a>
+					</div>
+				</div>
+				<div class="project-card">
+					<h3>Portfolio Website</h3>
+					<p>Responsive portfolio site with smooth animations, dark mode support, and optimized performance.</p>
+					<div class="project-tags">
+						<span>React</span><span>Tailwind CSS</span><span>Framer Motion</span><span>Vite</span>
+					</div>
+					<div class="project-links">
+						<a href="#" class="btn">Code</a>
+						<a href="#" class="btn primary">Live Demo</a>
+					</div>
+				</div>
+				<div class="project-card">
+					<h3>Blog Platform</h3>
+					<p>Content management system with markdown support, SEO optimization, and comment moderation.</p>
+					<div class="project-tags">
+						<span>Gatsby</span><span>GraphQL</span><span>Contentful</span><span>Netlify</span>
+					</div>
+					<div class="project-links">
+						<a href="#" class="btn">Code</a>
+						<a href="#" class="btn primary">Live Demo</a>
+					</div>
+				</div>
+			</div>
+		</section>
 
-      <!-- Featured preview -->
-      <section class="section alt" aria-label="Featured projects">
-        <div class="container">
-          <h2>Featured Projects</h2>
-          <div class="grid projects-grid">
-            <article class="card project">
-              <div class="card-body">
-                <h3>Project One</h3>
-                <p>A brief description of what this project does and why it’s cool.</p>
-              </div>
-              <div class="card-footer">
-                <a class="link" href="#">Live</a>
-                <a class="link" href="#">Code</a>
-              </div>
-            </article>
-            <article class="card project">
-              <div class="card-body">
-                <h3>Project Two</h3>
-                <p>Another project highlight with a concise, action-oriented summary.</p>
-              </div>
-              <div class="card-footer">
-                <a class="link" href="#">Live</a>
-                <a class="link" href="#">Code</a>
-              </div>
-            </article>
-            <article class="card project">
-              <div class="card-body">
-                <h3>Project Three</h3>
-                <p>Describe the problem solved, tech used, and your contribution.</p>
-              </div>
-              <div class="card-footer">
-                <a class="link" href="#">Live</a>
-                <a class="link" href="#">Code</a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+		<section id="contact" class="contact-section">
+			<h2 class="section-title">Get In Touch</h2>
+			<p class="section-desc">Ready to bring your ideas to life? Let's discuss your next project and create something amazing together.</p>
+			<div class="contact-content">
+				<div class="contact-left">
+					<h3>Let's Connect</h3>
+					<p>I'm always excited to discuss new opportunities, collaborate on interesting projects, or simply chat about technology and innovation.</p>
+					<div class="contact-info">
+						<div><span class="contact-icon">&#9993;</span> <strong>Email</strong><br>alex.chen@email.com</div>
+						<div><span class="contact-icon">&#128222;</span> <strong>Phone</strong><br>+1 (555) 123-4567</div>
+						<div><span class="contact-icon">&#128205;</span> <strong>Location</strong><br>San Francisco, CA</div>
+					</div>
+				</div>
+				<div class="contact-right">
+					<h3>Send a Message</h3>
+					<form id="contact-form">
+						<div class="form-row">
+							<input type="text" name="firstName" placeholder="First Name" required>
+							<input type="text" name="lastName" placeholder="Last Name" required>
+						</div>
+						<input type="email" name="email" placeholder="Email Address" required>
+						<input type="text" name="subject" placeholder="Subject" required>
+						<textarea name="message" placeholder="Tell me about your project or just say hello..." required></textarea>
+						<button type="submit" class="btn primary">Send Message</button>
+					</form>
+				</div>
+			</div>
+			<div class="response-time">
+				<h3>Response Time</h3>
+				<p>Usually within 24 hours</p>
+				<div class="response-bar"></div>
+			</div>
+		</section>
+	</main>
 
-      <!-- Skills -->
-      <section id="skills" class="section" aria-label="Skills">
-        <div class="container">
-          <h2>Skills</h2>
-          <ul class="tags">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Node.js</li>
-            <li>Accessibility</li>
-            <li>UI Design</li>
-          </ul>
-        </div>
-      </section>
+	<footer>
+		<div class="footer-content">
+			<p>&copy; 2024 Zhi Hin Foong. Built with passion and modern technologies.</p>
+			<p>Designed & Developed by Zhi Hin Foong</p>
+		</div>
+	</footer>
 
-      <!-- Contact -->
-      <section id="contact" class="section alt" aria-label="Contact">
-        <div class="container narrow">
-          <h2>Contact</h2>
-          <form class="contact-form" action="#" method="post" aria-label="Contact form">
-            <div class="form-row">
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" autocomplete="name" required />
-            </div>
-            <div class="form-row">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" required />
-            </div>
-            <div class="form-row">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <div class="form-actions">
-              <button class="btn primary" type="submit">Send Message</button>
-            </div>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer" role="contentinfo">
-      <div class="container footer-inner">
-        <p>© <span id="year"></span> Zhi Hin Foong</p>
-        <a href="#" class="to-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a>
-      </div>
-    </footer>
-
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-  </body>
-  </html>
-
-
+	<script src="script.js"></script>
+</body>
+</html>
