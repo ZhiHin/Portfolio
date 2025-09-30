@@ -129,3 +129,35 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	typeRole();
 });
+
+
+// Place in your script.js or a <script> tag after the section
+const images = [
+  'Image/project/fyp_dashboard.png',
+  'Image/project/fyp_document.png',
+  'Image/project/fyp_history.png',
+  'Image/project/fyp_shareDocument.png',
+  'Image/project/fyp_translate.png',
+  'Image/project/fyp_txtSummarizer.png'
+];
+let current = 0;
+const imgEl = document.getElementById('carousel-img');
+const prevBtn = document.getElementById('prev-img');
+const nextBtn = document.getElementById('next-img');
+
+function showImg(idx) {
+  imgEl.src = images[idx];
+}
+prevBtn.onclick = () => {
+  current = (current - 1 + images.length) % images.length;
+  showImg(current);
+};
+nextBtn.onclick = () => {
+  current = (current + 1) % images.length;
+  showImg(current);
+};
+// Auto change every 3s
+setInterval(() => {
+  current = (current + 1) % images.length;
+  showImg(current);
+}, 3000);

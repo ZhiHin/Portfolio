@@ -84,9 +84,42 @@
 			</div>
 		</section>
 
+		<!-- Project Showcase Section -->
+<section id="projects" class="max-w-5xl mx-auto mt-16">
+	<h2 class="text-4xl font-bold text-indigo-600 text-center mb-4">Featured Projects</h2>
+	<p class="text-center text-gray-500 mb-8">Showcasing my latest work and the technologies I'm passionate about</p>
+	<div class="bg-white rounded-3xl shadow-xl flex flex-col md:flex-row items-center mx-auto max-w-lg p-4">
+		<!-- Left: Carousel Banner with buttons inside image -->
+		<div class="md:w-1/2 w-full flex items-center justify-center bg-gradient-to-br from-indigo-100 to-white p-0">
+			<div id="project-carousel" class="relative w-44 h-44 flex items-center justify-center">
+				<img id="carousel-img" src="Image/project/fyp_dashboard.png" alt="FYP Screenshot" class="object-cover rounded-2xl w-full h-full shadow-lg transition duration-500" />
+				<div class="absolute inset-0 flex items-center justify-between px-2">
+					<button id="prev-img" class="bg-white/90 rounded-full p-2 shadow hover:bg-indigo-100 text-base font-bold border border-indigo-200">&#8592;</button>
+					<button id="next-img" class="bg-white/90 rounded-full p-2 shadow hover:bg-indigo-100 text-base font-bold border border-indigo-200">&#8594;</button>
+				</div>
+			</div>
+		</div>
+		<!-- Right: Description -->
+		<div class="md:w-1/2 w-full px-3 py-2 flex flex-col justify-center">
+			<h3 class="text-lg font-extrabold text-indigo-600 mb-2 text-center md:text-left tracking-tight">SummaSphere <span class="text-xs text-gray-500 font-normal">(AI Summarize Mobile App)</span></h3>
+			<p class="text-gray-700 mb-2 text-center md:text-left text-sm leading-normal">
+				<span class="font-semibold">Final Year Project</span> &mdash; Mobile app using <span class="font-semibold text-indigo-700">Flutter</span> & <span class="font-semibold text-indigo-700">Dart</span>, with <span class="font-semibold text-green-700">Python REST API</span> for AI summarization.<br>
+				<span class="text-gray-600">Features:</span> requirements analysis, AI model training, prototype creation, system design & development, functional testing.
+			</p>
+			<div class="flex flex-wrap justify-center md:justify-start gap-2 mb-2">
+				<span class="inline-block bg-indigo-100 text-indigo-700 px-3 py-1 rounded text-xs font-semibold shadow">Flutter</span>
+				<span class="inline-block bg-indigo-100 text-indigo-700 px-3 py-1 rounded text-xs font-semibold shadow">Dart</span>
+				<span class="inline-block bg-green-100 text-green-700 px-3 py-1 rounded text-xs font-semibold shadow">Python</span>
+				<span class="inline-block bg-yellow-100 text-yellow-700 px-3 py-1 rounded text-xs font-semibold shadow">REST API</span>
+				<span class="inline-block bg-pink-100 text-pink-700 px-3 py-1 rounded text-xs font-semibold shadow">AI</span>
+			</div>
+		</div>
+	</div>
+</section>
+
 
 		<!-- Projects Section -->
-		<section id="projects" class="hidden overflow-hidden py-24 px-4 bg-white">
+		<section id="projects-hide" class="hidden overflow-hidden py-24 px-4 bg-white">
 			<h2 class="text-4xl font-bold text-indigo-600 text-center mb-4">Featured Projects</h2>
 			<p class="text-center text-gray-500 mb-8">Showcasing my latest work and the technologies I'm passionate
 				about</p>
