@@ -1,183 +1,259 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Zhi Hin Foong Portfolio</title>
-	<link rel="stylesheet" href="styles.css">
+	<link href="./src/output.css" rel="stylesheet">
 </head>
-<body>
-	<header>
-		<nav class="navbar">
-			<div class="logo">Zhi Hin Foong</div>
-			<ul class="nav-links">
-				<li><a href="#home" class="active">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#projects">Projects</a></li>
-				<li><a href="#contact">Contact</a></li>
+
+<body class="bg-white text-gray-900 font-sans">
+	<header class="fixed w-full bg-white z-50 shadow-md">
+		<nav class="flex justify-between items-center px-8 py-4">
+			<div id="header-name" class="text-2xl font-extrabold tracking-wide"></div>
+			<ul class="flex gap-8 items-center">
+				<li><a href="#home" id="nav-home"
+						class="text-lg font-medium px-4 py-2 rounded hover:bg-gray-100 transition"></a>
+				</li>
+				<li><a href="#about" id="nav-about"
+						class="text-lg font-medium px-4 py-2 rounded hover:bg-gray-100 transition"></a></li>
+				<li><a href="#projects" id="nav-projects"
+						class="text-lg font-medium px-4 py-2 rounded hover:bg-gray-100 transition"></a></li>
+				<li><a href="#contact" id="nav-contact"
+						class="text-lg font-medium px-4 py-2 rounded hover:bg-gray-100 transition"></a></li>
 			</ul>
 		</nav>
 	</header>
 
 	<main>
-		<section id="home" class="hero-section">
-			<div class="hero-container">
-				<div class="hero-flex">
-					<div class="hero-content">
-						<h2>Hello, I'm</h2>
-						<h1 class="hero-title">Zhi Hin Foong</h1>
-						<h3 class="hero-subtitle">Software Engineer</h3>
-						<p class="hero-desc">Crafting elegant solutions through code. Passionate about creating innovative web applications with modern technologies and exceptional user experiences.</p>
-						<div class="hero-buttons">
-							<a href="#contact" class="btn primary">Get In Touch</a>
-							<a href="https://github.com/" target="_blank" class="btn">GitHub</a>
-							<a href="https://linkedin.com/" target="_blank" class="btn">LinkedIn</a>
-						</div>
+		<!-- Hero Section -->
+		<section id="home" class="min-h-screen flex items-center justify-center bg-white">
+			<div class="w-full max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+				<div class="flex-1 text-left md:text-left">
+					<h2 class="text-xl font-semibold mb-2"></h2>
+					<h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-2"></h1>
+					<div class="flex items-center mb-2 min-w-auto min-h-10">
+						<h3 class="text-2xl md:text-3xl font-bold text-indigo-600 roleloop"></h3>
 					</div>
-					<div class="hero-image">
-						<div class="hero-img-frame">
-							<img src="Image/FoongZhiHin_Photo.jpg" alt="Zhi Hin Foong" />
-						</div>
-					</div>
+					<p class="text-lg text-gray-700 mb-6"></p>
+					<div class="flex gap-4 mb-6"></div>
 				</div>
-                <div class="scroll-down">&#8595;</div>
-			</div>
-		</section>
-
-		<section id="about" class="about-section">
-			<h2 class="section-title">About Me</h2>
-			<div class="about-content">
-				<div class="about-left">
-					<h3>Passionate Developer & Problem Solver</h3>
-					<p>With over 5 years of experience in software development, I specialize in building scalable web applications and creating seamless user experiences. My journey began with a fascination for how technology can solve real-world problems.</p>
-					<p>I thrive on learning new technologies and pushing the boundaries of what's possible with code. Whether it's architecting complex systems or crafting pixel-perfect interfaces, I bring dedication and creativity to every project.</p>
-					<p>When I'm not coding, you'll find me contributing to open-source projects, exploring the latest tech trends, or mentoring aspiring developers in the community.</p>
-				</div>
-				<div class="about-right">
-					<h3>Technical Skills</h3>
-					<div class="skills-list">
-						<span>React</span><span>TypeScript</span><span>Node.js</span><span>Python</span><span>PostgreSQL</span><span>AWS</span><span>Docker</span><span>GraphQL</span><span>Next.js</span><span>Tailwind CSS</span><span>Git</span><span>Redux</span>
+				<div class="flex-1 flex justify-center md:justify-end">
+					<div
+						class="bg-white border-4 border-indigo-500 rounded-2xl shadow-lg p-2 w-80 h-96 flex items-center justify-center overflow-hidden">
+						<img src="" alt="" class="w-full h-full object-cover rounded-xl" />
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section id="projects" class="projects-section">
-			<h2 class="section-title">Featured Projects</h2>
-			<p class="section-desc">Showcasing my latest work and the technologies I'm passionate about</p>
-			<div class="projects-list">
-				<div class="project-card">
-					<h3>E-Commerce Platform <span class="badge">Featured</span></h3>
-					<p>Full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard.</p>
-					<div class="project-tags">
-						<span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Stripe</span>
+		<!-- About Section -->
+		<section id="about" class="py-24 px-6 bg-white mt-12 max-w-5xl mx-auto my-8">
+			<h2 class="text-4xl font-bold text-indigo-600 text-center mb-8"></h2>
+			<p id="aboutDesc" class="text-center text-gray-500 mb-8"></p>
+				<div class="grid grid-rows-2 gap-4">
+				<div class="rounded flex flex-row gap-4 p-4">
+					<div class="flex-1">
+						<div id="education" class="bg-white rounded-2xl shadow-2xl p-6">
+							<h3 class="text-xl font-semibold mb-4"></h3>
+							<div class="education-list space-y-4"></div>
+						</div>
 					</div>
-					<div class="project-links">
-						<a href="#" class="btn">Code</a>
-						<a href="#" class="btn primary">Live Demo</a>
-					</div>
-				</div>
-				<div class="project-card">
-					<h3>Task Management App <span class="badge">Featured</span></h3>
-					<p>Collaborative project management tool with real-time updates, file sharing, and team communication features.</p>
-					<div class="project-tags">
-						<span>Next.js</span><span>TypeScript</span><span>Prisma</span><span>Socket.io</span>
-					</div>
-					<div class="project-links">
-						<a href="#" class="btn">Code</a>
-						<a href="#" class="btn primary">Live Demo</a>
+					<div class="flex-1">
+						<div id="skills" class="bg-white rounded-2xl shadow-2xl p-6">
+							<h3 class="text-xl font-semibold mb-4"></h3>
+							<ul class="skill-list list-disc list-inside text-gray-700 space-y-1"></ul>
+						</div>
 					</div>
 				</div>
-				<div class="project-card">
-					<h3>AI Chat Interface</h3>
-					<p>Modern chat application with AI integration, message encryption, and customizable themes.</p>
-					<div class="project-tags">
-						<span>React</span><span>Python</span><span>OpenAI API</span><span>WebSocket</span>
+				<div class="rounded flex flex-row gap-4 p-4">
+					<div class="flex-1">
+						<div id="languages" class="bg-white rounded-2xl shadow-2xl p-6">
+							<h3 class="text-xl font-semibold mb-4"></h3>
+							<ul class="language-list list-disc list-inside text-gray-700 space-y-1"></ul>
+						</div>
 					</div>
-					<div class="project-links">
-						<a href="#" class="btn">Code</a>
-						<a href="#" class="btn primary">Live Demo</a>
-					</div>
-				</div>
-				<div class="project-card">
-					<h3>Weather Dashboard</h3>
-					<p>Interactive weather application with location-based forecasts, data visualization, and severe weather alerts.</p>
-					<div class="project-tags">
-						<span>Vue.js</span><span>Chart.js</span><span>Weather API</span><span>PWA</span>
-					</div>
-					<div class="project-links">
-						<a href="#" class="btn">Code</a>
-						<a href="#" class="btn primary">Live Demo</a>
-					</div>
-				</div>
-				<div class="project-card">
-					<h3>Portfolio Website</h3>
-					<p>Responsive portfolio site with smooth animations, dark mode support, and optimized performance.</p>
-					<div class="project-tags">
-						<span>React</span><span>Tailwind CSS</span><span>Framer Motion</span><span>Vite</span>
-					</div>
-					<div class="project-links">
-						<a href="#" class="btn">Code</a>
-						<a href="#" class="btn primary">Live Demo</a>
-					</div>
-				</div>
-				<div class="project-card">
-					<h3>Blog Platform</h3>
-					<p>Content management system with markdown support, SEO optimization, and comment moderation.</p>
-					<div class="project-tags">
-						<span>Gatsby</span><span>GraphQL</span><span>Contentful</span><span>Netlify</span>
-					</div>
-					<div class="project-links">
-						<a href="#" class="btn">Code</a>
-						<a href="#" class="btn primary">Live Demo</a>
+					<div class="flex-1">
+						<div id="work" class="bg-white rounded-2xl shadow-2xl p-6">
+							<h3 class="text-xl font-semibold mb-4"></h3>
+							<ul class="work-list list-disc list-inside text-gray-700 space-y-2"></ul>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section id="contact" class="contact-section">
-			<h2 class="section-title">Get In Touch</h2>
-			<p class="section-desc">Ready to bring your ideas to life? Let's discuss your next project and create something amazing together.</p>
-			<div class="contact-content">
-				<div class="contact-left">
-					<h3>Let's Connect</h3>
-					<p>I'm always excited to discuss new opportunities, collaborate on interesting projects, or simply chat about technology and innovation.</p>
-					<div class="contact-info">
-						<div><span class="contact-icon">&#9993;</span> <strong>Email</strong><br>alex.chen@email.com</div>
-						<div><span class="contact-icon">&#128222;</span> <strong>Phone</strong><br>+1 (555) 123-4567</div>
-						<div><span class="contact-icon">&#128205;</span> <strong>Location</strong><br>San Francisco, CA</div>
+
+		<!-- Projects Section -->
+		<section id="projects" class="hidden overflow-hidden py-24 px-4 bg-white">
+			<h2 class="text-4xl font-bold text-indigo-600 text-center mb-4">Featured Projects</h2>
+			<p class="text-center text-gray-500 mb-8">Showcasing my latest work and the technologies I'm passionate
+				about</p>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+				<div class="bg-white rounded-xl shadow p-6 flex flex-col gap-4">
+					<h3 class="text-xl font-bold text-gray-900 flex items-center gap-2">E-Commerce Platform <span
+							class="bg-indigo-100 text-indigo-700 px-2 py-1 rounded text-xs font-semibold">Featured</span>
+					</h3>
+					<p class="text-gray-700">Full-stack e-commerce solution with real-time inventory management, payment
+						processing, and admin dashboard.</p>
+					<div class="flex flex-wrap gap-2 mb-2">
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">React</span>
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">Node.js</span>
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">PostgreSQL</span>
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">Stripe</span>
+					</div>
+					<div class="flex gap-4">
+						<a href="#"
+							class="bg-gray-200 text-gray-900 px-4 py-2 rounded font-semibold hover:bg-gray-300 transition">Code</a>
+						<a href="#"
+							class="bg-indigo-600 text-white px-4 py-2 rounded font-semibold shadow hover:bg-indigo-700 transition">Live
+							Demo</a>
 					</div>
 				</div>
-				<div class="contact-right">
-					<h3>Send a Message</h3>
-					<form id="contact-form">
-						<div class="form-row">
-							<input type="text" name="firstName" placeholder="First Name" required>
-							<input type="text" name="lastName" placeholder="Last Name" required>
+				<div class="bg-white rounded-xl shadow p-6 flex flex-col gap-4">
+					<h3 class="text-xl font-bold text-gray-900 flex items-center gap-2">Task Management App <span
+							class="bg-indigo-100 text-indigo-700 px-2 py-1 rounded text-xs font-semibold">Featured</span>
+					</h3>
+					<p class="text-gray-700">Collaborative project management tool with real-time updates, file sharing,
+						and team communication features.</p>
+					<div class="flex flex-wrap gap-2 mb-2">
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">Next.js</span>
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">TypeScript</span>
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">Prisma</span>
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">Socket.io</span>
+					</div>
+					<div class="flex gap-4">
+						<a href="#"
+							class="bg-gray-200 text-gray-900 px-4 py-2 rounded font-semibold hover:bg-gray-300 transition">Code</a>
+						<a href="#"
+							class="bg-indigo-600 text-white px-4 py-2 rounded font-semibold shadow hover:bg-indigo-700 transition">Live
+							Demo</a>
+					</div>
+				</div>
+				<div class="bg-white rounded-xl shadow p-6 flex flex-col gap-4">
+					<h3 class="text-xl font-bold text-gray-900">AI Chat Interface</h3>
+					<p class="text-gray-700">Modern chat application with AI integration, message encryption, and
+						customizable themes.</p>
+					<div class="flex flex-wrap gap-2 mb-2">
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">React</span>
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">Python</span>
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">OpenAI API</span>
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">WebSocket</span>
+					</div>
+					<div class="flex gap-4">
+						<a href="#"
+							class="bg-gray-200 text-gray-900 px-4 py-2 rounded font-semibold hover:bg-gray-300 transition">Code</a>
+						<a href="#"
+							class="bg-indigo-600 text-white px-4 py-2 rounded font-semibold shadow hover:bg-indigo-700 transition">Live
+							Demo</a>
+					</div>
+				</div>
+				<div class="bg-white rounded-xl shadow p-6 flex flex-col gap-4">
+					<h3 class="text-xl font-bold text-gray-900">Weather Dashboard</h3>
+					<p class="text-gray-700">Interactive weather application with location-based forecasts, data
+						visualization, and severe weather alerts.</p>
+					<div class="flex flex-wrap gap-2 mb-2">
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">Vue.js</span>
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">Chart.js</span>
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">Weather API</span>
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">PWA</span>
+					</div>
+					<div class="flex gap-4">
+						<a href="#"
+							class="bg-gray-200 text-gray-900 px-4 py-2 rounded font-semibold hover:bg-gray-300 transition">Code</a>
+						<a href="#"
+							class="bg-indigo-600 text-white px-4 py-2 rounded font-semibold shadow hover:bg-indigo-700 transition">Live
+							Demo</a>
+					</div>
+				</div>
+				<div class="bg-white rounded-xl shadow p-6 flex flex-col gap-4">
+					<h3 class="text-xl font-bold text-gray-900">Portfolio Website</h3>
+					<p class="text-gray-700">Responsive portfolio site with smooth animations, dark mode support, and
+						optimized performance.</p>
+					<div class="flex flex-wrap gap-2 mb-2">
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">React</span>
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">Tailwind CSS</span>
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">Framer Motion</span>
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">Vite</span>
+					</div>
+					<div class="flex gap-4">
+						<a href="#"
+							class="bg-gray-200 text-gray-900 px-4 py-2 rounded font-semibold hover:bg-gray-300 transition">Code</a>
+						<a href="#"
+							class="bg-indigo-600 text-white px-4 py-2 rounded font-semibold shadow hover:bg-indigo-700 transition">Live
+							Demo</a>
+					</div>
+				</div>
+				<div class="bg-white rounded-xl shadow p-6 flex flex-col gap-4">
+					<h3 class="text-xl font-bold text-gray-900">Blog Platform</h3>
+					<p class="text-gray-700">Content management system with markdown support, SEO optimization, and
+						comment moderation.</p>
+					<div class="flex flex-wrap gap-2 mb-2">
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">Gatsby</span>
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">GraphQL</span>
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">Contentful</span>
+						<span class="bg-gray-100 text-gray-800 px-3 py-1 rounded text-sm">Netlify</span>
+					</div>
+					<div class="flex gap-4">
+						<a href="#"
+							class="bg-gray-200 text-gray-900 px-4 py-2 rounded font-semibold hover:bg-gray-300 transition">Code</a>
+						<a href="#"
+							class="bg-indigo-600 text-white px-4 py-2 rounded font-semibold shadow hover:bg-indigo-700 transition">Live
+							Demo</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Section -->
+		<section id="contact" class="py-24 px-4 bg-white">
+			<h2 id="contact-title" class="text-4xl font-bold text-indigo-600 text-center mb-4"></h2>
+			<p id="contact-desc" class="text-center text-gray-500 mb-8"></p>
+			<div class="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto">
+				<div class="flex-1 bg-white rounded-xl shadow p-8 mb-8 md:mb-0">
+					<h3 id="contact-desc1" class="text-xl font-semibold text-indigo-600 mb-2"></h3>
+					<p id="contact-content" class="text-gray-700 mb-4"></p>
+					<div class="space-y-4">
+						<div><span class="mr-2 text-lg">&#9993;</span> <span id="emailTitle"
+								class="font-bold"></span><br><span id="email" class="text-gray-700"></span></div>
+						<div><span class="mr-2 text-lg">&#128222;</span> <span id="phoneTitle"
+								class="font-bold"></span><br><span id="phone" class="text-gray-700"></span></div>
+						<div><span class="mr-2 text-lg">&#128205;</span> <span id="locationTitle"
+								class="font-bold"></span><br><span id="location" class="text-gray-700"></span></div>
+					</div>
+				</div>
+				<div class="flex-1 bg-white rounded-xl shadow p-8">
+					<h3 id="contactMsg" class="text-xl font-semibold text-indigo-600 mb-2"></h3>
+					<form id="contact-form" class="space-y-4">
+						<div class="flex gap-4">
+							<input type="text" name="firstName" placeholder="First Name" required
+								class="w-1/2 px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+							<input type="text" name="lastName" placeholder="Last Name" required
+								class="w-1/2 px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
 						</div>
-						<input type="email" name="email" placeholder="Email Address" required>
-						<input type="text" name="subject" placeholder="Subject" required>
-						<textarea name="message" placeholder="Tell me about your project or just say hello..." required></textarea>
-						<button type="submit" class="btn primary">Send Message</button>
+						<input type="email" name="email" placeholder="Email Address" required
+							class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+						<input type="text" name="subject" placeholder="Subject" required
+							class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+						<textarea name="message" placeholder="Tell me about your project or just say hello..." required
+							class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 min-h-[100px]"></textarea>
+						<button type="submit" id="contactSubmitBtn"
+							class="bg-indigo-600 text-white px-6 py-2 rounded font-semibold shadow hover:bg-indigo-700 transition"></button>
 					</form>
 				</div>
-			</div>
-			<div class="response-time">
-				<h3>Response Time</h3>
-				<p>Usually within 24 hours</p>
-				<div class="response-bar"></div>
 			</div>
 		</section>
 	</main>
 
-	<footer>
-		<div class="footer-content">
-			<p>&copy; 2024 Zhi Hin Foong. Built with passion and modern technologies.</p>
+	<footer class="bg-white text-gray-900 py-8 text-center">
+		<div>
+			<p class="mb-2">&copy; 2024 Zhi Hin Foong. Built with passion and modern technologies.</p>
 			<p>Designed & Developed by Zhi Hin Foong</p>
 		</div>
 	</footer>
 
-	<script src="script.js"></script>
+	<script type="module" src="script.js"></script>
 </body>
+
 </html>
