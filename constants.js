@@ -7,8 +7,8 @@ export const HERO = {
         "Crafting elegant solutions through code. Passionate about creating innovative web applications with modern technologies and exceptional user experiences.",
     buttons: [
         { text: "Get In Touch", href: "#contact", class: "bg-indigo-600 text-white px-6 py-2 rounded font-semibold shadow hover:bg-indigo-700 transition" },
-        { text: "GitHub", href: "https://github.com/", class: "bg-white border border-gray-300 text-gray-900 px-6 py-2 rounded font-semibold shadow hover:bg-gray-100 transition", target: "_blank" },
-        { text: "LinkedIn", href: "https://linkedin.com/", class: "bg-white border border-gray-300 text-gray-900 px-6 py-2 rounded font-semibold shadow hover:bg-gray-100 transition", target: "_blank" }
+        { text: "GitHub", href: "https://github.com/ZhiHin", class: "bg-white border border-gray-300 text-gray-900 px-6 py-2 rounded font-semibold shadow hover:bg-gray-100 transition", target: "_blank" },
+        { text: "LinkedIn", href: "https://www.linkedin.com/in/zhi-hin-foong/", class: "bg-white border border-gray-300 text-gray-900 px-6 py-2 rounded font-semibold shadow hover:bg-gray-100 transition", target: "_blank" }
     ],
     image: {
         src: "Image/FoongZhiHin_Photo.jpg",
