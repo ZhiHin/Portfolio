@@ -4,15 +4,34 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
 	<title>Zhi Hin Foong Portfolio</title>
-	<link href="./src/output.css" rel="stylesheet">
+	<link href="./src/styles.css" rel="stylesheet">
 </head>
 
 <body class="bg-white text-gray-900 font-sans">
 	<header class="fixed w-full bg-white z-50 shadow-md">
-		<nav class="flex justify-between items-center px-8 py-4">
-			<div id="header-name" class="text-2xl font-extrabold tracking-wide"></div>
-			<ul class="flex gap-8 items-center">
+		<nav class="flex justify-between items-center px-4 md:px-8 py-4">
+			<!-- Logo/Name: ZH for mobile, full name for md+ -->
+			<div class="text-2xl font-extrabold tracking-wide block md:hidden">
+				<a id="header-name" href="#home" class="hover:text-indigo-600 transition"></a>
+			</div>
+			<div class="text-2xl font-extrabold tracking-wide hidden md:block">
+				<a id="header-name-full" href="#home" class="hover:text-indigo-600 transition"></a>
+			</div>
+			<!-- Burger menu for mobile -->
+			<button id="burger-menu"
+				class="md:hidden flex items-center px-3 py-2 border rounded text-indigo-600 border-indigo-300 focus:outline-none"
+				aria-label="Open menu">
+				<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+					</path>
+				</svg>
+			</button>
+			<!-- Navigation links: horizontal for md+, vertical for mobile (hidden by default) -->
+			<ul id="nav-links"
+				class="flex-col absolute top-16 left-0 w-full bg-white shadow-md py-4 px-8 gap-4 items-center md:static md:flex md:flex-row md:gap-8 md:bg-transparent md:shadow-none md:py-0 md:px-0 md:w-auto md:items-center hidden">
 				<li><a href="#home" id="nav-home"
 						class="text-lg font-medium px-4 py-2 rounded hover:bg-gray-100 transition"></a>
 				</li>
@@ -28,32 +47,34 @@
 
 	<main>
 		<!-- Hero Section -->
-		<section id="home" class="min-h-screen flex items-center justify-center bg-white">
-			<div class="w-full max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-				<div class="flex-1 text-left md:text-left">
+		<section id="home" class="min-h-screen flex items-center justify-center bg-white pt-20">
+			<div
+				class="w-full max-w-6xl mx-auto px-2 sm:px-4 md:px-6 flex flex-col md:flex-row items-center gap-8 md:gap-12">
+				<div class="flex-1 text-center md:text-left">
 					<h2 class="text-xl font-semibold mb-2"></h2>
-					<h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-2"></h1>
-					<div class="flex items-center mb-2 min-w-auto min-h-10">
-						<h3 class="text-2xl md:text-3xl font-bold text-indigo-600 roleloop"></h3>
+					<h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-2"></h1>
+					<div class="flex items-center justify-center md:justify-start mb-2 min-w-auto min-h-10">
+						<h3 class="text-2xl sm:text-3xl font-bold text-indigo-600 roleloop"></h3>
 					</div>
-					<p class="text-lg text-gray-700 mb-6"></p>
-					<div class="flex gap-4 mb-6"></div>
+					<p class="text-base sm:text-lg text-gray-700 mb-6"></p>
+					<div id="heroButtons" class="flex flex-col sm:flex-row gap-4 mb-6 items-center md:items-start">
+					</div>
 				</div>
 				<div class="flex-1 flex justify-center md:justify-end">
 					<div
-						class="bg-white border-4 border-indigo-500 rounded-2xl shadow-lg p-2 w-80 h-96 flex items-center justify-center overflow-hidden">
-						<img src="" alt="" class="w-full h-full object-cover rounded-xl" />
+						class="bg-white border-4 border-indigo-500 rounded-2xl shadow-lg p-2 w-40 h-40 sm:w-64 sm:h-64 md:w-80 md:h-96 flex items-center justify-center overflow-hidden">
+						<img id="hero-img" src="" alt="" class="w-full h-full object-cover rounded-xl" />
 					</div>
 				</div>
 			</div>
 		</section>
 
 		<!-- About Section -->
-		<section id="about" class="py-24 px-6 bg-white mt-12 max-w-5xl mx-auto my-8">
-			<h2 class="text-4xl font-bold text-indigo-600 text-center mb-8"></h2>
+		<section id="about" class="py-24 px-2 sm:px-4 md:px-6 bg-white mt-12 max-w-5xl mx-auto my-8">
+			<h2 id="aboutTitle" class="text-4xl font-bold text-indigo-600 text-center mb-8"></h2>
 			<p id="aboutDesc" class="text-center text-gray-500 mb-8"></p>
-				<div class="grid grid-rows-2 gap-4">
-				<div class="rounded flex flex-row gap-4 p-4">
+			<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+				<div class="rounded flex flex-col gap-4">
 					<div class="flex-1">
 						<div id="education" class="bg-white rounded-2xl shadow-2xl p-6">
 							<h3 class="text-xl font-semibold mb-4"></h3>
@@ -67,7 +88,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="rounded flex flex-row gap-4 p-4">
+				<div class="rounded flex flex-col gap-4 p-4">
 					<div class="flex-1">
 						<div id="languages" class="bg-white rounded-2xl shadow-2xl p-6">
 							<h3 class="text-xl font-semibold mb-4"></h3>
@@ -85,37 +106,63 @@
 		</section>
 
 		<!-- Project Showcase Section -->
-<section id="projects" class="max-w-5xl mx-auto mt-16">
-	<h2 class="text-4xl font-bold text-indigo-600 text-center mb-4">Featured Projects</h2>
-	<p class="text-center text-gray-500 mb-8">Showcasing my latest work and the technologies I'm passionate about</p>
-	<div class="bg-white rounded-3xl shadow-xl flex flex-col md:flex-row items-center mx-auto max-w-lg p-4">
-		<!-- Left: Carousel Banner with buttons inside image -->
-		<div class="md:w-1/2 w-full flex items-center justify-center bg-gradient-to-br from-indigo-100 to-white p-0">
-			<div id="project-carousel" class="relative w-44 h-44 flex items-center justify-center">
-				<img id="carousel-img" src="Image/project/fyp_dashboard.png" alt="FYP Screenshot" class="object-cover rounded-2xl w-full h-full shadow-lg transition duration-500" />
-				<div class="absolute inset-0 flex items-center justify-between px-2">
-					<button id="prev-img" class="bg-white/90 rounded-full p-2 shadow hover:bg-indigo-100 text-base font-bold border border-indigo-200">&#8592;</button>
-					<button id="next-img" class="bg-white/90 rounded-full p-2 shadow hover:bg-indigo-100 text-base font-bold border border-indigo-200">&#8594;</button>
+		<section id="projects" class="py-24 max-w-5xl mx-auto mt-16 px-2 sm:px-4">
+			<h2 class="text-4xl font-bold text-indigo-600 text-center mb-4">Projects Showcase</h2>
+			<p class="text-center text-gray-500 mb-12">
+				Showcasing my latest work and the technologies I'm passionate about
+			</p>
+
+			<div class="flex flex-col md:flex-row items-center justify-center gap-10">
+				<!-- Left: Carousel Banner -->
+				<div id="project-carousel"
+					class="relative w-44 h-80 sm:w-56 sm:h-[500px] flex items-center justify-center rounded-[2.5rem] border-4 border-gray-300 shadow-2xl bg-black overflow-hidden group" ontouchstart="" >
+
+					<img id="carousel-img" src="Image/project/fyp_dashboard.png" alt="FYP Screenshot"
+						class="object-cover w-full h-full rounded-[2rem] transition duration-500" />
+
+					<!-- Navigation arrows -->
+					<div class="absolute inset-0 flex items-center justify-between px-3">
+						<button id="prev-img"
+							class="opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto items-center justify-center bg-gradient-to-r from-indigo-400 to-indigo-600 text-white rounded-full p-3 shadow-xl border-2 border-white hover:scale-110 transition-all duration-300 text-2xl font-bold prev-btn absolute left-3 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+						</button>
+						<button id="next-img"
+							class="opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto items-center justify-center bg-gradient-to-r from-pink-400 to-indigo-500 text-white rounded-full p-3 shadow-xl border-2 border-white hover:scale-110 transition-all duration-300 text-2xl font-bold next-btn absolute right-3 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+						</button>
+					</div>
+				</div>
+
+
+				<!-- Right: Description -->
+				<div class="md:w-1/2 w-full px-2 sm:px-3 py-2 flex flex-col justify-center items-center md:items-start">
+					<h3
+						class="text-lg sm:text-xl font-extrabold text-indigo-600 mb-3 text-center md:text-left tracking-tight">
+						SummaSphere <span class="text-xs text-gray-500 font-normal">(AI Summarize Mobile App)</span>
+					</h3>
+					<p class="text-gray-700 mb-4 text-center md:text-left text-sm sm:text-base leading-relaxed">
+						<span class="font-semibold">Final Year Project</span> &mdash; Mobile app using
+						<span class="font-semibold text-indigo-700">Flutter</span> &
+						<span class="font-semibold text-indigo-700">Dart</span>, with
+						<span class="font-semibold text-green-700">Python REST API</span> for AI summarization.<br>
+						<span class="text-gray-600">Features:</span> The app enables users to scan documents, generate AI-powered summaries, convert documents into different formats, and translate content seamlessly.
+					</p>
+					<div class="flex flex-wrap justify-center md:justify-start gap-2">
+						<span
+							class="inline-block bg-indigo-100 text-indigo-700 px-3 py-1 rounded text-xs font-semibold shadow">Flutter</span>
+						<span
+							class="inline-block bg-indigo-100 text-indigo-700 px-3 py-1 rounded text-xs font-semibold shadow">Dart</span>
+						<span
+							class="inline-block bg-green-100 text-green-700 px-3 py-1 rounded text-xs font-semibold shadow">Python</span>
+						<span
+							class="inline-block bg-yellow-100 text-yellow-700 px-3 py-1 rounded text-xs font-semibold shadow">REST
+							API</span>
+						<span
+							class="inline-block bg-pink-100 text-pink-700 px-3 py-1 rounded text-xs font-semibold shadow">AI</span>
+					</div>
 				</div>
 			</div>
-		</div>
-		<!-- Right: Description -->
-		<div class="md:w-1/2 w-full px-3 py-2 flex flex-col justify-center">
-			<h3 class="text-lg font-extrabold text-indigo-600 mb-2 text-center md:text-left tracking-tight">SummaSphere <span class="text-xs text-gray-500 font-normal">(AI Summarize Mobile App)</span></h3>
-			<p class="text-gray-700 mb-2 text-center md:text-left text-sm leading-normal">
-				<span class="font-semibold">Final Year Project</span> &mdash; Mobile app using <span class="font-semibold text-indigo-700">Flutter</span> & <span class="font-semibold text-indigo-700">Dart</span>, with <span class="font-semibold text-green-700">Python REST API</span> for AI summarization.<br>
-				<span class="text-gray-600">Features:</span> requirements analysis, AI model training, prototype creation, system design & development, functional testing.
-			</p>
-			<div class="flex flex-wrap justify-center md:justify-start gap-2 mb-2">
-				<span class="inline-block bg-indigo-100 text-indigo-700 px-3 py-1 rounded text-xs font-semibold shadow">Flutter</span>
-				<span class="inline-block bg-indigo-100 text-indigo-700 px-3 py-1 rounded text-xs font-semibold shadow">Dart</span>
-				<span class="inline-block bg-green-100 text-green-700 px-3 py-1 rounded text-xs font-semibold shadow">Python</span>
-				<span class="inline-block bg-yellow-100 text-yellow-700 px-3 py-1 rounded text-xs font-semibold shadow">REST API</span>
-				<span class="inline-block bg-pink-100 text-pink-700 px-3 py-1 rounded text-xs font-semibold shadow">AI</span>
-			</div>
-		</div>
-	</div>
-</section>
+		</section>
 
 
 		<!-- Projects Section -->
@@ -240,30 +287,33 @@
 		</section>
 
 		<!-- Contact Section -->
-		<section id="contact" class="py-24 px-4 bg-white">
-			<h2 id="contact-title" class="text-4xl font-bold text-indigo-600 text-center mb-4"></h2>
+		<section id="contact" class="py-16 sm:py-24 px-2 sm:px-4 bg-white">
+			<h2 id="contact-title" class="text-3xl sm:text-4xl font-bold text-indigo-600 text-center mb-4"></h2>
 			<p id="contact-desc" class="text-center text-gray-500 mb-8"></p>
-			<div class="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto">
-				<div class="flex-1 bg-white rounded-xl shadow p-8 mb-8 md:mb-0">
-					<h3 id="contact-desc1" class="text-xl font-semibold text-indigo-600 mb-2"></h3>
+			<div class="flex flex-col md:flex-row gap-4 sm:gap-8 max-w-5xl mx-auto">
+				<div class="flex-1 bg-white rounded-xl shadow p-4 sm:p-8 mb-4 md:mb-0">
+					<h3 id="contact-desc1" class="text-lg sm:text-xl font-semibold text-indigo-600 mb-2"></h3>
 					<p id="contact-content" class="text-gray-700 mb-4"></p>
 					<div class="space-y-4">
-						<div><span class="mr-2 text-lg">&#9993;</span> <span id="emailTitle"
-								class="font-bold"></span><br><span id="email" class="text-gray-700"></span></div>
-						<div><span class="mr-2 text-lg">&#128222;</span> <span id="phoneTitle"
-								class="font-bold"></span><br><span id="phone" class="text-gray-700"></span></div>
-						<div><span class="mr-2 text-lg">&#128205;</span> <span id="locationTitle"
-								class="font-bold"></span><br><span id="location" class="text-gray-700"></span></div>
+						<div class="flex items-center"><span class="mr-2 text-lg">&#9993;</span> <span id="emailTitle"
+								class="font-bold"></span></div>
+						<div class="text-gray-700 mb-2" id="email"></div>
+						<div class="flex items-center"><span class="mr-2 text-lg">&#128222;</span> <span id="phoneTitle"
+								class="font-bold"></span></div>
+						<div class="text-gray-700 mb-2" id="phone"></div>
+						<div class="flex items-center"><span class="mr-2 text-lg">&#128205;</span> <span
+								id="locationTitle" class="font-bold"></span></div>
+						<div class="text-gray-700 mb-2" id="location"></div>
 					</div>
 				</div>
-				<div class="flex-1 bg-white rounded-xl shadow p-8">
-					<h3 id="contactMsg" class="text-xl font-semibold text-indigo-600 mb-2"></h3>
-					<form id="contact-form" class="space-y-4">
-						<div class="flex gap-4">
+				<div class="flex-1 bg-white rounded-xl shadow p-4 sm:p-8">
+					<h3 id="contactMsg" class="text-lg sm:text-xl font-semibold text-indigo-600 mb-2"></h3>
+					<form id="contact-form" class="space-y-4" action="https://formspree.io/f/mjkardvl" method="POST">
+						<div class="flex flex-col sm:flex-row gap-4">
 							<input type="text" name="firstName" placeholder="First Name" required
-								class="w-1/2 px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+								class="w-full sm:w-1/2 px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
 							<input type="text" name="lastName" placeholder="Last Name" required
-								class="w-1/2 px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+								class="w-full sm:w-1/2 px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
 						</div>
 						<input type="email" name="email" placeholder="Email Address" required
 							class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
@@ -272,7 +322,7 @@
 						<textarea name="message" placeholder="Tell me about your project or just say hello..." required
 							class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 min-h-[100px]"></textarea>
 						<button type="submit" id="contactSubmitBtn"
-							class="bg-indigo-600 text-white px-6 py-2 rounded font-semibold shadow hover:bg-indigo-700 transition"></button>
+													class="bg-indigo-600 text-white px-6 py-2 rounded font-semibold shadow hover:bg-indigo-700 transition">Send Message</button>
 					</form>
 				</div>
 			</div>
@@ -280,9 +330,10 @@
 	</main>
 
 	<footer class="bg-white text-gray-900 py-8 text-center">
-		<div>
-			<p class="mb-2">&copy; 2024 Zhi Hin Foong. Built with passion and modern technologies.</p>
-			<p>Designed & Developed by Zhi Hin Foong</p>
+		<div class="px-2 sm:px-0">
+			<p class="mb-2 text-xs sm:text-base">&copy; 2024 Zhi Hin Foong. Built with passion and modern technologies.
+			</p>
+			<p class="text-xs sm:text-base">Designed & Developed by Zhi Hin Foong</p>
 		</div>
 	</footer>
 
