@@ -169,6 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Place in your script.js or a <script> tag after the section
+
 const images = [
 	'Image/project/fyp_dashboard.png',
 	'Image/project/fyp_document.png',
@@ -182,10 +183,20 @@ const imgEl = document.getElementById('carousel-img');
 const prevBtn = document.getElementById('prev-img');
 const nextBtn = document.getElementById('next-img');
 const carousel = document.getElementById('project-carousel');
+const bullets = document.getElementById('carousel-bullets');
 
 function showImg(idx) {
 	imgEl.src = images[idx];
+	updateBullets(idx);
 }
+
+function updateBullets(idx) {
+	if (!bullets) return;
+	bullets.innerHTML = images.map((_, i) =>
+		 `<span class="w-3 h-3 rounded-full mx-1 inline-block transition-all duration-300 ${i === idx ? 'bg-indigo-500 scale-125' : 'bg-gray-300'}"></span>`
+	).join('');
+}
+
 prevBtn.onclick = () => {
 	current = (current - 1 + images.length) % images.length;
 	showImg(current);
@@ -194,29 +205,25 @@ nextBtn.onclick = () => {
 	current = (current + 1) % images.length;
 	showImg(current);
 };
+
 // Auto change every 3s
 setInterval(() => {
 	current = (current + 1) % images.length;
 	showImg(current);
 }, 3000);
 
-// Hide buttons by default, show on hover (desktop) or tap (mobile)
-function showButtons() {
-	prevBtn.classList.remove('hidden');
-	nextBtn.classList.remove('hidden');
+// Responsive: hide next/prev on mobile, allow swipe only
+function updateButtonVisibility() {
+	if (window.innerWidth < 640) { // sm breakpoint
+		 prevBtn.classList.add('hidden');
+		 nextBtn.classList.add('hidden');
+	} else {
+		 prevBtn.classList.remove('hidden');
+		 nextBtn.classList.remove('hidden');
+	}
 }
-function hideButtons() {
-	prevBtn.classList.add('hidden');
-	nextBtn.classList.add('hidden');
-}
-// Desktop: show on hover
-carousel.addEventListener('mouseenter', showButtons);
-carousel.addEventListener('mouseleave', hideButtons);
-// Mobile: show on tap for 2s
-carousel.addEventListener('touchstart', function () {
-	showButtons();
-	setTimeout(hideButtons, 2000);
-});
+window.addEventListener('resize', updateButtonVisibility);
+document.addEventListener('DOMContentLoaded', updateButtonVisibility);
 
 // Swipe support for mobile
 let touchStartX = 0;
@@ -227,10 +234,15 @@ carousel.addEventListener('touchstart', function (e) {
 carousel.addEventListener('touchend', function (e) {
 	touchEndX = e.changedTouches[0].screenX;
 	if (touchEndX < touchStartX - 40) {
-		// Swipe left
-		nextBtn.click();
+		 // Swipe left
+		 current = (current + 1) % images.length;
+		 showImg(current);
 	} else if (touchEndX > touchStartX + 40) {
-		// Swipe right
-		prevBtn.click();
+		 // Swipe right
+		 current = (current - 1 + images.length) % images.length;
+		 showImg(current);
 	}
 });
+
+// Initial render
+showImg(current);
