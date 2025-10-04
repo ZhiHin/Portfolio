@@ -5,6 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://cdn.tailwindcss.com"></script>
+	<!-- Animate.css for beautiful entrance animations -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 	<title>Zhi Hin Foong Portfolio</title>
 	<link href="./src/styles.css" rel="stylesheet">
 </head>
@@ -21,7 +23,7 @@
 			</div>
 			<!-- Burger menu for mobile -->
 			<button id="burger-menu"
-				class="md:hidden flex items-center px-3 py-2 border rounded text-indigo-600 border-indigo-300 focus:outline-none"
+				class="md:hidden flex items-center px-3 py-1 border rounded text-indigo-600 border-indigo-300 focus:outline-none"
 				aria-label="Open menu">
 				<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
 					xmlns="http://www.w3.org/2000/svg">
@@ -52,17 +54,22 @@
 				class="w-full max-w-6xl mx-auto px-2 sm:px-4 md:px-6 flex flex-col md:flex-row items-center gap-8 md:gap-12">
 				<div class="flex-1 text-center md:text-left">
 					<h2 class="text-xl font-semibold mb-2"></h2>
-					<h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-2"></h1>
+					<h1
+						class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-2">
+					</h1>
 					<div class="flex items-center justify-center md:justify-start mb-2 min-w-auto min-h-10">
-						<h3 class="text-2xl sm:text-3xl font-bold text-indigo-600 roleloop"></h3>
+						<h3
+							class="text-2xl sm:text-3xl font-bold text-indigo-600 roleloop">
+						</h3>
 					</div>
-					<p class="text-base sm:text-lg text-gray-700 mb-6"></p>
+					<p
+						class="text-base sm:text-lg text-gray-700 mb-6">
+					</p>
 					<div id="heroButtons" class="flex flex-col sm:flex-row gap-4 mb-6 items-center md:items-start">
 					</div>
 				</div>
 				<div class="flex-1 flex justify-center md:justify-end">
-					<div
-						class="bg-white border-4 border-indigo-500 rounded-2xl shadow-lg p-2 w-40 h-40 sm:w-64 sm:h-64 md:w-80 md:h-96 flex items-center justify-center overflow-hidden">
+					<div class="bg-white border-4 border-indigo-500 rounded-2xl shadow-lg p-2 w-48 h-64 sm:w-64 sm:h-80 md:w-80 md:h-96 flex items-center justify-center overflow-hidden">
 						<img id="hero-img" src="" alt="" class="w-full h-full object-cover rounded-xl" />
 					</div>
 				</div>
@@ -70,35 +77,77 @@
 		</section>
 
 		<!-- About Section -->
-		<section id="about" class="py-24 px-2 sm:px-4 md:px-6 bg-white mt-12 max-w-5xl mx-auto my-8">
+		<section id="about" class="pt-16 px-2 sm:px-4 md:px-6 bg-white max-w-5xl mx-auto my-4">
 			<h2 id="aboutTitle" class="text-4xl font-bold text-indigo-600 text-center mb-8"></h2>
 			<p id="aboutDesc" class="text-center text-gray-500 mb-8"></p>
-			<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-				<div class="rounded flex flex-col gap-4">
-					<div class="flex-1">
-						<div id="education" class="bg-white rounded-2xl shadow-2xl p-6">
-							<h3 class="text-xl font-semibold mb-4"></h3>
-							<div class="education-list space-y-4"></div>
-						</div>
-					</div>
-					<div class="flex-1">
-						<div id="skills" class="bg-white rounded-2xl shadow-2xl p-6">
-							<h3 class="text-xl font-semibold mb-4"></h3>
-							<ul class="skill-list list-disc list-inside text-gray-700 space-y-1"></ul>
+			<div class="grid grid-cols-1 md:grid-flow-row md:grid-cols-3 gap-4 h-full">
+				<!-- Education Card -->
+				<div class="flex-1 h-full md:col-span-2">
+					<div class="flip-card h-full">
+						<div class="flip-card-inner h-full rounded-2xl">
+							<div class="flip-card-front rounded-2xl shadow-2xl p-6 h-full flex items-center justify-center" style="background: linear-gradient(135deg, #7F7FD5 0%, #86A8E7 50%, #91EAE4 100%);">
+								<h3 class="text-2xl font-bold text-indigo-700">Education</h3>
+							</div>
+							<div id="education" class="flip-card-back bg-white rounded-2xl shadow-2xl p-6 h-full flex flex-col">
+								<h3 class="text-xl font-semibold mb-4"></h3>
+								<div class="education-list space-y-4"></div>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="rounded flex flex-col gap-4 p-4">
-					<div class="flex-1">
-						<div id="languages" class="bg-white rounded-2xl shadow-2xl p-6">
-							<h3 class="text-xl font-semibold mb-4"></h3>
-							<ul class="language-list list-disc list-inside text-gray-700 space-y-1"></ul>
+				<!-- Work Experience Card -->
+				<div class="flex-1 h-full md:col-span-1">
+					<div class="flip-card h-full">
+						<div class="flip-card-inner h-full rounded-2xl">
+							<div class="flip-card-front rounded-2xl shadow-2xl p-6 h-full flex items-center justify-center" style="background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%);">
+								<h3 class="text-2xl font-bold text-pink-700">Work Experience</h3>
+							</div>
+							<div id="work" class="flip-card-back bg-white rounded-2xl shadow-2xl p-6 h-full flex flex-col">
+								<h3 class="text-xl font-semibold mb-4"></h3>
+								<ul class="work-list list-disc list-inside text-gray-700 space-y-2"></ul>
+							</div>
 						</div>
 					</div>
-					<div class="flex-1">
-						<div id="work" class="bg-white rounded-2xl shadow-2xl p-6">
-							<h3 class="text-xl font-semibold mb-4"></h3>
-							<ul class="work-list list-disc list-inside text-gray-700 space-y-2"></ul>
+				</div>
+				<!-- Skills Card -->
+				<div class="flex-1 h-full md:col-span-1">
+					<div class="flip-card h-full">
+						<div class="flip-card-inner h-full rounded-2xl">
+							<div class="flip-card-front rounded-2xl shadow-2xl p-6 h-full flex items-center justify-center" style="background: linear-gradient(135deg, #43E97B 0%, #38F9D7 100%);">
+								<h3 class="text-2xl font-bold text-green-700">Skills</h3>
+							</div>
+							<div id="skills" class="flip-card-back bg-white rounded-2xl shadow-2xl p-6 h-full flex flex-col">
+								<h3 class="text-xl font-semibold mb-4"></h3>
+								<ul class="skill-list list-disc list-inside text-gray-700 space-y-1"></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Technical Skills Card -->
+				<div class="flex-1 h-full md:col-span-1">
+					<div class="flip-card h-full">
+						<div class="flip-card-inner h-full rounded-2xl">
+							<div class="flip-card-front rounded-2xl shadow-2xl p-6 h-full flex items-center justify-center" style="background: linear-gradient(135deg, #FCE38A 0%, #F38181 100%);">
+								<h3 class="text-2xl font-bold text-yellow-700">Technical Skills</h3>
+							</div>
+							<div id="techSkills" class="flip-card-back bg-white rounded-2xl shadow-2xl p-6 h-full flex flex-col">
+								<h3 class="text-xl font-semibold mb-4"></h3>
+								<ul class="techSkillList list-disc list-inside text-gray-700 space-y-1"></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Languages Card -->
+				<div class="flex-1 h-full md:col-span-1">
+					<div class="flip-card h-full">
+						<div class="flip-card-inner h-full rounded-2xl">
+							<div class="flip-card-front rounded-2xl shadow-2xl p-6 h-full flex items-center justify-center" style="background: linear-gradient(135deg, #89F7FE 0%, #66A6FF 100%);">
+								<h3 class="text-2xl font-bold text-blue-700">Languages</h3>
+							</div>
+							<div id="languages" class="flip-card-back bg-white rounded-2xl shadow-2xl p-6 h-full flex flex-col">
+								<h3 class="text-xl font-semibold mb-4"></h3>
+								<ul class="language-list list-disc list-inside text-gray-700 space-y-1"></ul>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -106,7 +155,7 @@
 		</section>
 
 		<!-- Project Showcase Section -->
-		<section id="projects" class="py-24 max-w-5xl mx-auto mt-16 px-2 sm:px-4">
+		<section id="projects" class="pt-16 max-w-5xl mx-auto px-2 sm:px-4 md:px-6">
 			<h2 class="text-4xl font-bold text-indigo-600 text-center mb-4">Projects Showcase</h2>
 			<p class="text-center text-gray-500 mb-12">
 				Showcasing my latest work and the technologies I'm passionate about
@@ -115,7 +164,8 @@
 			<div class="flex flex-col md:flex-row items-center justify-center gap-10">
 				<!-- Left: Carousel Banner -->
 				<div id="project-carousel"
-					class="relative w-44 h-80 sm:w-56 sm:h-[500px] flex items-center justify-center rounded-[2.5rem] border-4 border-gray-300 shadow-2xl bg-black overflow-hidden group" ontouchstart="" >
+					class="relative min-w-[220px] min-h-[500px] w-44 h-80 sm:w-56 sm:h-[500px] flex items-center justify-center rounded-[2.5rem] border-4 border-gray-300 shadow-2xl bg-black overflow-hidden group"
+					ontouchstart="">
 
 					<img id="carousel-img" src="Image/project/fyp_dashboard.png" alt="FYP Screenshot"
 						class="object-cover w-full h-full rounded-[2rem] transition duration-500" />
@@ -124,11 +174,19 @@
 					<div class="absolute inset-0 flex items-center justify-between px-3">
 						<button id="prev-img"
 							class="opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto items-center justify-center bg-gradient-to-r from-indigo-400 to-indigo-600 text-white rounded-full p-3 shadow-xl border-2 border-white hover:scale-110 transition-all duration-300 text-2xl font-bold prev-btn absolute left-3 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+								stroke="currentColor" class="w-6 h-6">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+									d="M15 19l-7-7 7-7" />
+							</svg>
 						</button>
 						<button id="next-img"
 							class="opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto items-center justify-center bg-gradient-to-r from-pink-400 to-indigo-500 text-white rounded-full p-3 shadow-xl border-2 border-white hover:scale-110 transition-all duration-300 text-2xl font-bold next-btn absolute right-3 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+								stroke="currentColor" class="w-6 h-6">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+									d="M9 5l7 7-7 7" />
+							</svg>
 						</button>
 					</div>
 				</div>
@@ -145,7 +203,9 @@
 						<span class="font-semibold text-indigo-700">Flutter</span> &
 						<span class="font-semibold text-indigo-700">Dart</span>, with
 						<span class="font-semibold text-green-700">Python REST API</span> for AI summarization.<br>
-						<span class="text-gray-600">Features:</span> The app enables users to scan documents, generate AI-powered summaries, convert documents into different formats, and translate content seamlessly.
+						<span class="text-gray-600">Features:</span> The app enables users to scan documents, generate
+						AI-powered summaries, convert documents into different formats, and translate content
+						seamlessly.
 					</p>
 					<div class="flex flex-wrap justify-center md:justify-start gap-2">
 						<span
@@ -166,7 +226,7 @@
 
 
 		<!-- Projects Section -->
-		<section id="projects-hide" class="hidden overflow-hidden py-24 px-4 bg-white">
+		<section id="projects-hide" class="hidden overflow-hidden py-10 px-4 bg-white">
 			<h2 class="text-4xl font-bold text-indigo-600 text-center mb-4">Featured Projects</h2>
 			<p class="text-center text-gray-500 mb-8">Showcasing my latest work and the technologies I'm passionate
 				about</p>
@@ -287,7 +347,7 @@
 		</section>
 
 		<!-- Contact Section -->
-		<section id="contact" class="py-16 sm:py-24 px-2 sm:px-4 bg-white">
+		<section id="contact" class="pt-16 max-w-5xl mx-auto px-2 sm:px-4 md:px-6 bg-white">
 			<h2 id="contact-title" class="text-3xl sm:text-4xl font-bold text-indigo-600 text-center mb-4"></h2>
 			<p id="contact-desc" class="text-center text-gray-500 mb-8"></p>
 			<div class="flex flex-col md:flex-row gap-4 sm:gap-8 max-w-5xl mx-auto">
@@ -322,7 +382,8 @@
 						<textarea name="message" placeholder="Tell me about your project or just say hello..." required
 							class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 min-h-[100px]"></textarea>
 						<button type="submit" id="contactSubmitBtn"
-													class="bg-indigo-600 text-white px-6 py-2 rounded font-semibold shadow hover:bg-indigo-700 transition">Send Message</button>
+							class="bg-indigo-600 text-white px-6 py-2 rounded font-semibold shadow hover:bg-indigo-700 transition">Send
+							Message</button>
 					</form>
 				</div>
 			</div>
@@ -331,7 +392,7 @@
 
 	<footer class="bg-white text-gray-900 py-8 text-center">
 		<div class="px-2 sm:px-0">
-			<p class="mb-2 text-xs sm:text-base">&copy; 2024 Zhi Hin Foong. Built with passion and modern technologies.
+			<p class="mb-2 text-xs sm:text-base">&copy; 2025 Zhi Hin Foong. Built with passion and modern technologies.
 			</p>
 			<p class="text-xs sm:text-base">Designed & Developed by Zhi Hin Foong</p>
 		</div>

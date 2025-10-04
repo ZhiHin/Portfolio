@@ -24,6 +24,7 @@ export const TITLE = {
     CONTACT: "Contact Me",
     LANG: "Languages",
     SKILL: "Skills",
+    TECHSKILL: "Technical Skills",
     EDU: "Education",
     WORK: "Work Experience",
     EMAIL: "Email",
@@ -52,6 +53,15 @@ export const ABOUT = {
         "Leadership",
         "Effective Communication",
         "Critical Thinking"
+    ],
+    techSkills: [
+        "Java",
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+        "JavaScript",
+        "TypeScript",
+        "Rest API",
     ],
     education: [
         {

@@ -1,3 +1,21 @@
+// Flip card on click logic
+document.addEventListener('DOMContentLoaded', () => {
+	document.querySelectorAll('.flip-card').forEach(card => {
+		card.addEventListener('click', function (e) {
+			// Prevent click from bubbling to parent grid
+			e.stopPropagation();
+			this.classList.toggle('flipped');
+		});
+		// Optional: allow keyboard accessibility
+		card.setAttribute('tabindex', '0');
+		card.addEventListener('keydown', function (e) {
+			if (e.key === 'Enter' || e.key === ' ') {
+				e.preventDefault();
+				this.classList.toggle('flipped');
+			}
+		});
+	});
+});
 // main.js
 import { HERO, ABOUT, CONTACT, TITLE, MSG } from './constants.js';
 
@@ -12,7 +30,6 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 	});
 });
 
-// Helper
 function setHTML(selector, html) {
 	const el = document.querySelector(selector);
 	if (el) el.innerHTML = html;
@@ -70,16 +87,20 @@ document.addEventListener('DOMContentLoaded', () => {
 	setHTML('#aboutDesc', ABOUT.LONGMSG);
 
 	// Languages
-setHTML('#languages h3', TITLE.LANG);
-setHTML('#languages .language-list', ABOUT.languages.map(l => `<li>${l}</li>`).join(''));
+	setHTML('#languages h3', TITLE.LANG);
+	setHTML('#languages .language-list', ABOUT.languages.map(l => `<li>${l}</li>`).join(''));
 
-// Skills
-setHTML('#skills h3', TITLE.SKILL);
-setHTML('#skills .skill-list', ABOUT.skills.map(s => `<li>${s}</li>`).join(''));
+	// Skills
+	setHTML('#skills h3', TITLE.SKILL);
+	setHTML('#skills .skill-list', ABOUT.skills.map(s => `<li>${s}</li>`).join(''));
 
-// Education
-setHTML('#education h3', TITLE.EDU);
-setHTML('#education .education-list', ABOUT.education.map(e => `
+	// Technical Skills
+	setHTML('#techSkills h3', TITLE.TECHSKILL);
+	setHTML('#techSkills .techSkillList', ABOUT.techSkills.map(ts => `<li>${ts}</li>`).join(''));
+
+	// Education
+	setHTML('#education h3', TITLE.EDU);
+	setHTML('#education .education-list', ABOUT.education.map(e => `
 <p class="mb-4">
   <span class="font-bold">${e.degree}</span><br>
   ${e.school}<br>
@@ -88,9 +109,9 @@ setHTML('#education .education-list', ABOUT.education.map(e => `
 </p>
 `).join(''));
 
-// Work
-setHTML('#work h3', TITLE.WORK);
-setHTML('#work .work-list', ABOUT.work.map(w => `<li>${w}</li>`).join(''));
+	// Work
+	setHTML('#work h3', TITLE.WORK);
+	setHTML('#work .work-list', ABOUT.work.map(w => `<li>${w}</li>`).join(''));
 
 	// CONTACT SECTION
 	setHTML('#contact-title', CONTACT.TITLE);
@@ -192,7 +213,7 @@ function hideButtons() {
 carousel.addEventListener('mouseenter', showButtons);
 carousel.addEventListener('mouseleave', hideButtons);
 // Mobile: show on tap for 2s
-carousel.addEventListener('touchstart', function() {
+carousel.addEventListener('touchstart', function () {
 	showButtons();
 	setTimeout(hideButtons, 2000);
 });
@@ -200,10 +221,10 @@ carousel.addEventListener('touchstart', function() {
 // Swipe support for mobile
 let touchStartX = 0;
 let touchEndX = 0;
-carousel.addEventListener('touchstart', function(e) {
+carousel.addEventListener('touchstart', function (e) {
 	touchStartX = e.changedTouches[0].screenX;
 });
-carousel.addEventListener('touchend', function(e) {
+carousel.addEventListener('touchend', function (e) {
 	touchEndX = e.changedTouches[0].screenX;
 	if (touchEndX < touchStartX - 40) {
 		// Swipe left
