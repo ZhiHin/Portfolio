@@ -48,7 +48,7 @@
 
 /* Responsive fix for card size */
 .flip-card, .flip-card-inner, .flip-card-front, .flip-card-back {
-	min-height: 220px;
+	min-height: 400px;
 	min-width: 0;
 }
 
