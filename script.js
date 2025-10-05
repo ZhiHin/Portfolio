@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		projectImg.src = PROJECTS.IMG.src;
 		projectImg.alt = PROJECTS.IMG.alt;
 	}
-	setHTML('#projectTitle1', PROJECTS.SS);
+	setHTML('#projectTitle1', PROJECTS.SS + " " + `<span class="text-xs text-gray-500 font-normal">${PROJECTS.SS2}</span>`);
 	setHTML('#projectTitle1 span', PROJECTS.SS2);
 	setHTML('#projectDesc1', `
     <span class="font-semibold">${PROJECTS.FYP}</span> — ${PROJECTS.FYP_DESC}
