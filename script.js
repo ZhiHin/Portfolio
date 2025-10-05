@@ -1,3 +1,12 @@
+// main.js
+import { HERO, ABOUT, CONTACT, TITLE, MSG, PROJECTS } from './constants.js';
+
+// Footer text constant
+export const FOOTER = {
+	MAIN: name => `© ${name} ${new Date().getFullYear()}. Built with passion and modern technologies.`,
+	SUB: name => `Designed & Developed by ${name}`
+};
+
 // Flip card on click logic
 document.addEventListener('DOMContentLoaded', () => {
 	document.querySelectorAll('.flip-card').forEach(card => {
@@ -16,8 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 });
-// main.js
-import { HERO, ABOUT, CONTACT, TITLE, MSG } from './constants.js';
 
 // Smooth scroll for navigation links
 document.querySelectorAll('.nav-links a').forEach(link => {
@@ -87,20 +94,24 @@ document.addEventListener('DOMContentLoaded', () => {
 	setHTML('#aboutDesc', ABOUT.LONGMSG);
 
 	// Languages
+	setHTML('#languagesTitle', TITLE.LANG);
 	setHTML('#languages h3', TITLE.LANG);
-	setHTML('#languages .language-list', ABOUT.languages.map(l => `<li>${l}</li>`).join(''));
+	setHTML('#languageList', ABOUT.languages.map(l => `<li>${l}</li>`).join(''));
 
 	// Skills
+	setHTML('#skillsTitle', TITLE.SKILL);
 	setHTML('#skills h3', TITLE.SKILL);
-	setHTML('#skills .skill-list', ABOUT.skills.map(s => `<li>${s}</li>`).join(''));
+	setHTML('#skillList', ABOUT.skills.map(s => `<li>${s}</li>`).join(''));
 
 	// Technical Skills
+	setHTML('#techSkillsTitle', TITLE.TECHSKILL);
 	setHTML('#techSkills h3', TITLE.TECHSKILL);
-	setHTML('#techSkills .techSkillList', ABOUT.techSkills.map(ts => `<li>${ts}</li>`).join(''));
+	setHTML('#techSkillList', ABOUT.techSkills.map(ts => `<li>${ts}</li>`).join(''));
 
 	// Education
+	setHTML('#educationTitle', TITLE.EDU);
 	setHTML('#education h3', TITLE.EDU);
-	setHTML('#education .education-list', ABOUT.education.map(e => `
+	setHTML('#educationList', ABOUT.education.map(e => `
 <p class="mb-4">
   <span class="font-bold">${e.degree}</span><br>
   ${e.school}<br>
@@ -110,8 +121,32 @@ document.addEventListener('DOMContentLoaded', () => {
 `).join(''));
 
 	// Work
+	setHTML('#workTitle', TITLE.WORK);
 	setHTML('#work h3', TITLE.WORK);
-	setHTML('#work .work-list', ABOUT.work.map(w => `<li>${w}</li>`).join(''));
+	setHTML('#workList', ABOUT.work.map(w => `<li>${w}</li>`).join(''));
+
+	//project Section (summaSphere)
+	setHTML('#projects h2', PROJECTS.TITLE);
+	setHTML('#projects p', PROJECTS.DESC);
+	const projectImg = document.getElementById('carouselImg');
+	if (projectImg) {
+		projectImg.src = PROJECTS.IMG.src;
+		projectImg.alt = PROJECTS.IMG.alt;
+	}
+	setHTML('#projectTitle1', PROJECTS.SS);
+	setHTML('#projectTitle1 span', PROJECTS.SS2);
+	setHTML('#projectDesc1', `
+    <span class="font-semibold">${PROJECTS.FYP}</span> — ${PROJECTS.FYP_DESC}
+    <span class="font-semibold text-indigo-700">${PROJECTS.FLUTTER}</span>${PROJECTS.AND}
+    <span class="font-semibold text-indigo-700">${PROJECTS.DART}</span>,${PROJECTS.WITH}
+    <span class="font-semibold text-green-700">${PROJECTS.PYT_REST}</span> ${PROJECTS.AI_SUM}<br>
+    <span class="text-gray-600">${PROJECTS.FEATURE}</span> ${PROJECTS.FEATURE_DESC}
+`);
+	setHTML('#projectTag1_1', PROJECTS.FLUTTER);
+	setHTML('#projectTag1_2', PROJECTS.DART);
+	setHTML('#projectTag1_3', PROJECTS.PYTHON);
+	setHTML('#projectTag1_4', PROJECTS.REST);
+	setHTML('#projectTag1_5', PROJECTS.AI);
 
 	// CONTACT SECTION
 	setHTML('#contact-title', CONTACT.TITLE);
@@ -126,6 +161,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	setHTML('#location', CONTACT.LOCATION);
 	setHTML('#contactMsg', MSG.SNDAMSG);
 	setHTML('#contactSubmitBtn', MSG.SNDMSG);
+
+	// FOOTER SECTION
+	const name = HERO.name;
+	setHTML('#footer-main', FOOTER.MAIN(name));
+	setHTML('#footer-sub', FOOTER.SUB(name));
 });
 
 // Typing and cycling animation for hero subtitle
@@ -167,9 +207,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	typeRole();
 });
 
-
-// Place in your script.js or a <script> tag after the section
-
 const images = [
 	'Image/project/fyp_dashboard.png',
 	'Image/project/fyp_document.png',
@@ -179,7 +216,7 @@ const images = [
 	'Image/project/fyp_txtSummarizer.png'
 ];
 let current = 0;
-const imgEl = document.getElementById('carousel-img');
+const imgEl = document.getElementById('carouselImg');
 const prevBtn = document.getElementById('prev-img');
 const nextBtn = document.getElementById('next-img');
 const carousel = document.getElementById('project-carousel');
@@ -193,7 +230,7 @@ function showImg(idx) {
 function updateBullets(idx) {
 	if (!bullets) return;
 	bullets.innerHTML = images.map((_, i) =>
-		 `<span class="w-3 h-3 rounded-full mx-1 inline-block transition-all duration-300 ${i === idx ? 'bg-indigo-500 scale-125' : 'bg-gray-300'}"></span>`
+		`<span class="w-3 h-3 rounded-full mx-1 inline-block transition-all duration-300 ${i === idx ? 'bg-indigo-500 scale-125' : 'bg-gray-300'}"></span>`
 	).join('');
 }
 
@@ -215,11 +252,11 @@ setInterval(() => {
 // Responsive: hide next/prev on mobile, allow swipe only
 function updateButtonVisibility() {
 	if (window.innerWidth < 640) { // sm breakpoint
-		 prevBtn.classList.add('hidden');
-		 nextBtn.classList.add('hidden');
+		prevBtn.classList.add('hidden');
+		nextBtn.classList.add('hidden');
 	} else {
-		 prevBtn.classList.remove('hidden');
-		 nextBtn.classList.remove('hidden');
+		prevBtn.classList.remove('hidden');
+		nextBtn.classList.remove('hidden');
 	}
 }
 window.addEventListener('resize', updateButtonVisibility);
@@ -234,13 +271,13 @@ carousel.addEventListener('touchstart', function (e) {
 carousel.addEventListener('touchend', function (e) {
 	touchEndX = e.changedTouches[0].screenX;
 	if (touchEndX < touchStartX - 40) {
-		 // Swipe left
-		 current = (current + 1) % images.length;
-		 showImg(current);
+		// Swipe left
+		current = (current + 1) % images.length;
+		showImg(current);
 	} else if (touchEndX > touchStartX + 40) {
-		 // Swipe right
-		 current = (current - 1 + images.length) % images.length;
-		 showImg(current);
+		// Swipe right
+		current = (current - 1 + images.length) % images.length;
+		showImg(current);
 	}
 });
 

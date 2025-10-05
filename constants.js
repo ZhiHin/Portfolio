@@ -84,6 +84,30 @@ export const ABOUT = {
     ],
 };
 
+export const PROJECTS = {
+    TITLE:"Projects Showcase",
+    DESC:"Showcasing my latest work and the technologies I'm passionate about",
+    IMG: {
+        src: "Image/project/fyp_dashboard.png",
+        alt: "FYP Screenshot"
+    },
+    SS:"SummaSphere",
+    SS2:"(AI Summarize Mobile App)",
+    FYP:"Final Year Project",
+    FYP_DESC:"Mobile app using",
+    FLUTTER:"Flutter",
+    AND:" & ",
+    DART:"Dart",
+    WITH:" with ",
+    PYT_REST:"Python REST API",
+    AI_SUM:"for AI summarization.",
+    FEATURE:"Features:",
+    FEATURE_DESC:"The app enables users to scan documents, generate AI-powered summaries, convert documents into different formats, and translate contentseamlessly.",
+    PYTHON:"Python",
+    REST:"REST API",
+    AI:"AI"
+}
+
 export const CONTACT = {
     TITLE: "Get In Touch",
     DESC: "Ready to bring your ideas to life? Let's discuss your next project and create something amazing together.",
@@ -91,5 +115,5 @@ export const CONTACT = {
     CONTENT: "I'm always excited to discuss new opportunities, collaborate on interesting projects, or simply chat about technology and innovation.",
     EMAIL: "zhihinfoong4@gmail.com",
     PHONE: "+60 11-1761 6448",
-    LOCATION: "Kuala Lumpur, Malaysia"
+    LOCATION: "Kuala Lumpur, Malaysia",
 };
